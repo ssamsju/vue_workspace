@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+      <script src="http://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="clock">
+  <p class="time">{{time}}</p>
+</div>
+<script>
+  const clock = new Vue({
+    el:"#clock",
+    data:{
+      time: ''
+    }
+  });
+  window.onload = function(){
+    setInterval(addTime, "1000");
+  }
+    function addTime(){
+    let date = new Date();
+    clock.time = date.getFullYear()+"년"
+    +(date.getMonth()+1)+"월"
+    +date.getDay()+"일"
+    +date.getHours()+"시"
+    +date.getMinutes()+"분"
+    +date.getSeconds()+"초"
+    }
+</script>
+  </body>
+</html>
